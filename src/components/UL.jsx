@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import globalContext from '../context/GlobalContext'
 import Li from './Li'
 
-function UL ({spends,deleteTodo,updateSpend}) {
+function UL () {
+  const {spends}=useContext(globalContext)
   return (
    <ul className="list-group">{
     spends.map((spend)=>
-    <Li key={spend.id} spend ={spend} deleteTodo={deleteTodo} updateSpend={updateSpend}/>
+    <Li key={spend.id} spend ={spend} />
     )
 
    }

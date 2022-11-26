@@ -1,7 +1,10 @@
 import React from 'react'
+import { useContext } from 'react'
+import globalContext from '../context/GlobalContext'
 
-function Li({ spend,deleteTodo,updateSpend}) {
+function Li({ spend}) {
   const { text, amount, id} = spend
+  const{deleteTodo,updateSpend}=useContext(globalContext)
   return (
 
     <li className='list-item'>
